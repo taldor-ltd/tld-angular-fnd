@@ -12,5 +12,5 @@ jobs:
 
     steps:
     - run: npm install
-    - run: npm package
-    - run: npm publish
+    - run: npm run package
+    - run: npm run publish
