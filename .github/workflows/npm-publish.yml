@@ -1,24 +1,17 @@
-name: Node.js CI
-
+name: NPM Publish
 on:
   push:
    branches:
     - master
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
     - uses: actions/checkout@v2
-      
     - name: Setup NodeJS
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    
     - name: npm install
     - run: npm install
-      
