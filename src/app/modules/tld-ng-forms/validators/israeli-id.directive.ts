@@ -14,6 +14,7 @@ import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
   ],
 })
 
+/** פונקציונליות שבודקת האם התעודת זהות שהוזנה תקינה */
 export class IsraeliIdValidator implements Validator {
   @Input() tldIsraeliId = true;
 
