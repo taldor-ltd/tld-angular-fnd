@@ -12,5 +12,5 @@ jobs:
 
     steps:
     - run: npm install
-    - run: npm run package
+    - run: ng-packagr -p ./package.json
     - run: npm run publish
