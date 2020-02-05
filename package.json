@@ -2,7 +2,6 @@
   "name": "@taldor-ltd/tld-angular-fnd",
   "version": "0.0.1",
   "description": "Shared Angular functionality to all Taldor developers",
-  "$schema": "ng-packagr/ng-package.schema.json",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,13 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "package": "ng-packagr -p package.json && gulp build-assets",
+    "package": "ng-packagr && gulp build-assets",
     "publish": "npm publish ./dist --access public"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
-    }
   },
   "private": false,
   "peerDependencies": {
