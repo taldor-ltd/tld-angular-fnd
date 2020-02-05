@@ -1,8 +1,7 @@
 {
   "name": "@taldor-ltd/tld-angular-fnd",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Shared Angular functionality to all Taldor developers",
-  "$schema": "ng-packagr/ng-package.schema.json",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,13 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "package": "ng-packagr -p package.json",
+    "package": "ng-packagr && gulp build-assets",
     "publish": "npm publish ./dist --access public"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
-    }
   },
   "private": false,
   "peerDependencies": {
@@ -39,10 +33,16 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-flatten": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uglifycss": "^1.0.6",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

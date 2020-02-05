@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "assets/css/snippets.css";
+@import "assets/css/snippets-width-height.css";
+@import "assets/css/snippets-pading-margin.css";
