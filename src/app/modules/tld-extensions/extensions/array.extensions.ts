@@ -6,26 +6,27 @@
 
 // 2. make sure to  import '@extensions/array' in app.component.ts
 
-interface Array<T> {
-    // add extension methods declarations here:
-    containsElements(): boolean;
-    any(predicate?: Function): boolean;
-    firstOrDefault(predicate: Function): T;
-    first(predicate: Function): T;
-    sum(predicate: Function): number;
-    where(predicate: Function): T[];
-    min(predicate: Function): number;
-    max(predicate: Function): number;
-    orderBy(predicate: Function): T[];
-    orderByDesc(predicate: Function): T[];
-    average(predicate: Function): number;
-    select(predicate: Function): any[];
-    groupBy(predicate: Function): any[];
-    count(predicate: Function): number;
-    take(number: number): T[];
-    split(perdicate: (element: T) => boolean): [T[], T[]];
+declare global {
+    interface Array<T> {
+        // add extension methods declarations here:
+        containsElements(): boolean;
+        any(predicate?: Function): boolean;
+        firstOrDefault(predicate: Function): T;
+        first(predicate: Function): T;
+        sum(predicate: Function): number;
+        where(predicate: Function): T[];
+        min(predicate: Function): number;
+        max(predicate: Function): number;
+        orderBy(predicate: Function): T[];
+        orderByDesc(predicate: Function): T[];
+        average(predicate: Function): number;
+        select(predicate: Function): any[];
+        groupBy(predicate: Function): any[];
+        count(predicate: Function): number;
+        take(number: number): T[];
+        split(perdicate: (element: T) => boolean): [T[], T[]];
+    }
 }
-
 // add extension method implementations into the prototype here:
 Array.prototype.containsElements = function() {
     if (this.length > 0) {
@@ -202,3 +203,4 @@ Array.prototype.groupBy = function(predicate: Function) {
 
 };
 
+export {};

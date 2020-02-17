@@ -23,7 +23,7 @@ export class EmailValidator implements Validator {
     if (value !== undefined && value !== null && value.length > 0) {
 
       let valid = true;
-      const regexp = new RegExp('^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$');
+      const regexp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 
 
       valid = regexp.test(value);

@@ -1,10 +1,11 @@
-interface Function {
-    callDelayed(previousThis: any, ...args: any): any;
-    callDelayedTimout(previousThis: any, timeout: number, ...args: any): any;
-    applyDelayed(previousThis: any, args?: any[]): any;
-    applyDelayedTimout(previousThis: any, timeout: number, args?: any[]): any;
+declare global {
+    interface Function {
+        callDelayed(previousThis: any, ...args: any): any;
+        callDelayedTimout(previousThis: any, timeout: number, ...args: any): any;
+        applyDelayed(previousThis: any, args?: any[]): any;
+        applyDelayedTimout(previousThis: any, timeout: number, args?: any[]): any;
+    }
 }
-
 Function.prototype.callDelayed = function(previousThis: any, ...args: any) {
 
     if (typeof this !== 'function') {
@@ -47,3 +48,5 @@ Function.prototype['applyDelayedTimout'] = function(previousThis: any, timeout: 
         boundTargetFunction.apply(previousThis, args);
     }, timeout);
 };
+
+export {};
