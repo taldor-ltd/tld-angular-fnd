@@ -17,12 +17,7 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "@extensions/*" : [
-        "src/app/modules/tld-extensions/extensions/*.extensions.ts"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

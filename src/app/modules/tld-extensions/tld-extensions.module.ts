@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import '@extensions/_tld';
+import 'src/app/modules/tld-extensions/extensions/_tld.extensions';
 
 @NgModule({
   imports: [
