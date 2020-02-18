@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IsraeliIdValidator } from './validators/israeli-id.directive';
+import { EmailValidator } from './validators/email.directive';
 
 @NgModule({
   declarations: [
-    IsraeliIdValidator
+    IsraeliIdValidator,
+    EmailValidator
   ],
   exports: [
-    IsraeliIdValidator
+    IsraeliIdValidator,
+    EmailValidator
   ],
   imports: [
     CommonModule
