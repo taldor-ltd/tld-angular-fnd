@@ -3,7 +3,7 @@ declare global {
         // callDelayed(previousThis: any, ...args: any): any;
         // callDelayedTimout(previousThis: any, timeout: number, ...args: any): any;
         applyDelayed(previousThis: any, args?: any[]): any;
-        applyDelayedTimout(previousThis: any, timeout: number, args?: any[]): any;
+        applyDelayedTimeout(previousThis: any, timeout: number, args?: any[]): any;
     }
 }
 // Function.prototype.callDelayed = function(previousThis: any, ...args: any) {
@@ -39,7 +39,7 @@ Function.prototype['applyDelayed'] = function(previousThis: any,  args?: any[]) 
     }, 0);
 };
 
-Function.prototype['applyDelayedTimout'] = function(previousThis: any, timeout: number, args?: any[]) {
+Function.prototype['applyDelayedTimeout'] = function(previousThis: any, timeout: number, args?: any[]) {
     if (typeof this !== 'function') {
         throw new Error(this + 'cannot be bound as it\'s not callable');
     }
