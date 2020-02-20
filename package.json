@@ -1,6 +1,6 @@
 {
   "name": "@taldor-ltd/tld-angular-fnd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared Angular functionality to all Taldor developers",
   "scripts": {
     "ng": "ng",
