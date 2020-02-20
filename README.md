@@ -2,7 +2,57 @@
 
 Shared Angular functionality to all Taldor developers.
 
-## Directives
+# Install
+
+```
+npm install @taldor-ltd/tld-angular-fnd
+```
+<br/>
+<br/>
+
+# Extensions
+
+## Usage
+Add `TldExtensionsModule` to your module's 'imports'
+
+## Array extension
+
+|method|parameters|return value|description|
+|-|-|-|-|
+|containsElements()|-|boolean|Check if there are elements in the array|
+|any|predicate|bollean|Check if there are elements in the array according to predicate conditions|
+|firstOrDefault|predicate|object or null|Returns the first array's element according to predicate conditions. Returns `null` if none found|
+|first|predicate|object|Returns the first array's element according to predicate conditions. Throws `error` if none found|
+|sum|predicate|number|Returns the sum of the property selected in the predicate|
+|where|predicate|object[]|Rturns all the elements according to predicate conditions|
+|min|predicate|number|Returns the minimum value of the property selected in the predicate|
+|max|predicate|number|Returns the maximum value of the property selected in the predicate|
+|orderBy|predicate|object[]|Returns array order ascending by the property selected in the predicate|
+|orderByDesc|predicate|object[]|Returns array order descending by the property selected in the predicate|
+|average|predicate|number|Returns the average value of the property selected in the predicate|
+|select|predicate|object[]|Returns array of all elements property selected in the predicate|
+|groupBy|predicate|object[]|Returns array of [key, values[]] according to the property selected in the predicate|
+|count|predicate|number|Returns the number of elements according to predicate conditions|
+|take|number|object[]|Returns the top X elements of the array|
+|split|predicate|[object[], object[]]|Returns array of elements according to predicate conditions and elements NOT according to predicate conditions|
+
+## Function extension
+
+|method|parameters|description|
+|-|-|-|
+|applyDelayed|(this, args[])|Invokes the function with `0` timeout delay|
+|applyDelayedTimeout|(this,timeOutInMilliseconds args[])|Invokes the function with `timeOutInMilliseconds` timeout delay|
+
+<br/>
+<br/>
+<br/>
+
+# Directives
+
+## Usage
+Add `TldNgFormsModule` to your module's `imports`
+
+This module includes:
 
 ### Israeli Id Validator
 
@@ -27,7 +77,35 @@ Forms Validator for checking input of TZ
 <span *ngIf="(tz.errors && tz.errors.israeliId) && (tz.dirty || tz.touched)">ת.ז. לא תקינה</span>
 ````
 
+### Email address Validator
+
+Forms Validator for checking input of Email address
+
+#### Usage
+
+* Add `tldEmail` attribute to your `<input>`
+	```` html
+	<input tldEmail>
+	````
+
+* Check `errors` of input's ngModel object for `email` error
+
+```` html
+<input placeholder="Email Address" name="email" #email="ngModel" [(ngModel)]="myEmail" tldEmail>
+<span *ngIf="(email.errors && email.errors.email) && (email.dirty || email.touched)">Invalid Email address</span>
+````
+
 ## CSS class snippets:
+
+## Usage
+Configure at the styles section, as follow.
+```
+"styles": [
+  //...
+  "node_modules/@taldor-ltd/tld-angular-fnd/src/resources/tld-snippets.css",
+  //...
+],
+```
 
 Here are some examples for what each css snippet file contains.
 For almost each example there are many more options with the same naming conventions.
