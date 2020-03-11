@@ -16,12 +16,15 @@ import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
 
 /** פונקציונליות שבודקת האם התעודת זהות שהוזנה תקינה */
 export class IsraeliIdValidator implements Validator {
-  @Input() tldIsraeliId = true;
+  @Input() tldIsraeliId: boolean;
 
   validate(c: AbstractControl) {
     const value = c.value;
 
-    if (this.tldIsraeliId && value !== undefined && value !== null && value.length > 0) {
+    // apperantley there is no such thing as default value for the @Input() variable
+    // so... 'this.tldIsraeliId !== false' is a MUST!!! if no value set externaly for '@Input() tldIsraeliId'
+    // only if 'tldIsraeliId' is set as 'false' we won't check
+    if (this.tldIsraeliId !== false && value !== undefined && value !== null && value.length > 0) {
 
       let valid = true;
       let counter = 0;
