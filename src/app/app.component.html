@@ -349,6 +349,12 @@
 
   </div>
 
+  <h2>Israeli ID validator:</h2>
+  <div>
+    <input #tz='ngModel' type="text" tldIsraeliId [(ngModel)]="person.tz" id="tz">
+    <p *ngIf="tz.errors && tz.errors.israeliId">תז לא תקינה</p>
+  </div>
+
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

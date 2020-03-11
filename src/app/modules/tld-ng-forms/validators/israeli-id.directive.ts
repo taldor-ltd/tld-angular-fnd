@@ -21,10 +21,10 @@ export class IsraeliIdValidator implements Validator {
   validate(c: AbstractControl) {
     const value = c.value;
 
-    // apperantley there is no such thing as default value for the @Input() variable
-    // so... 'this.tldIsraeliId !== false' is a MUST!!! if no value set externaly for '@Input() tldIsraeliId'
+    // apparently there is no such thing as default value for the @Input() variable
+    // so... 'this.tldIsraeliId !== false' is a MUST!!! if no value set externally for '@Input() tldIsraeliId'
     // only if 'tldIsraeliId' is set as 'false' we won't check
-    if (this.tldIsraeliId !== false && value !== undefined && value !== null && value.length > 0) {
+    if (this.tldIsraeliId !== false && value && value.length > 0) {
 
       let valid = true;
       let counter = 0;
